@@ -5,4 +5,4 @@
 
 # Idea 2
 
-when to meet” except instead of putting in all your available times, it uses you and your friends google calendars to find a free time for all of you to hang out. It also uses the weather api to account for days with bad weather and returns an optimal date to hang out on. Additionally, we could make it kind of always active, sending everyone a notification every couple weeks or so “here’s a date to hang out on
+A sort of "when to meet" app except instead of putting in all your available times, it uses your and your friends google calendars to find a free time for all of you to hang out. It also uses the weather api to account for days with bad weather and returns an optimal date to hang out on. Additionally, we could make it kind of always active, sending everyone a notification every couple weeks or so such as “here’s a date to hang out on."
