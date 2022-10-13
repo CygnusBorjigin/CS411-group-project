@@ -1,6 +1,7 @@
 # Idea 1
 
-  tinder but for movies in that you can link to a friend/friend groups’ id or significant other’s id and then upvote or downvote movies, with the app matching you guys when there’s a movie that you’ve both upvoted. We could use some kind of calendar/event api and maybe an IMDb api if there is one
+  This idea revolves around forming a sort of tinder but for movies, in that you can link to a friend/friend groups’ id or significant other’s id and then upvote or downvote movies, with the app matching you when there’s a movie that you’ve both upvoted. We will make use of a database to maintain the relationships between users and user profiles. For APIs, we will use at least the IMDB API for movie information, the Twitter API to show tweets related to each movie, and maybe some kind of calendar/event api. In terms of third party authentication, we will maybe tie in Google accounts or Twitter. 
+
 
 # Idea 2
 
