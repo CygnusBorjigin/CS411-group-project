@@ -6,4 +6,4 @@ Group member:
 - Aleks Sekulovski
 - Brian
 - Zhuoyi Wang
-- Divya Damalwa
+- Divya Bamalwa
