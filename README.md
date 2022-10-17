@@ -4,6 +4,6 @@ Group member:
 - Adena Etaat
 - Ariel Uribe
 - Aleks Sekulovski
-- Brian
+- Brian Li
 - Zhuoyi Wang
 - Divya Bamalwa
