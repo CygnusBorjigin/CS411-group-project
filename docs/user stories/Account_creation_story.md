@@ -1,8 +1,5 @@
 
 
-As a user, I want to see more information about a specific movie that I am swiping through.
-    As a user is swiping through movies to watch, one should be able to swipe up on a movie to find out important information about the movie such as ratings, genre, length, and a synopsis. The user should also be able to see what streaming services the movie is available on in order to know if they have access to that particular streaming service.
-
 As a user, I want to be able to see what movies I have swiped on.
     Users should have a page where they can see all the movies they have swiped on. Have the option to sort by date swiped, genre, etc. If a user changes their mind on a movie, they should be able to change their current status to the opposite(liked to disliked and vice versa).
 
