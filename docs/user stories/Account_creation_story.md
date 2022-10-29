@@ -1,6 +1,3 @@
-As a user, I want to be able to log in to my account.
-    The user should see a login page that prompts them to enter the username/email and a password. When entering their password, the user can choose whether it is visible or not while typing it. After entering the users login information, they should be able to click a submit, or log-in, button. If the user is found, they will be directed to the app's home page. If the user is not found, they will be notified that they entered a wrong username and password.
-
 As a logged in user, I want to add friends to my profile, so that I can determine what movie to watch with them.
 Within the social tab of the app, there is a search box to find other users. If the user does not exist, it will display “Not Found.” If the user does exist, there is a button to add them as a friend on their profile. Once user A adds user B as a friend, user B would need to accept the request in order for them to be connected. If user B rejects the request, then user A would need to submit another request if they would like to try connecting again.
 
