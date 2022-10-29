@@ -1,6 +1,3 @@
-As a logged in user, I want to add friends to my profile, so that I can determine what movie to watch with them.
-Within the social tab of the app, there is a search box to find other users. If the user does not exist, it will display “Not Found.” If the user does exist, there is a button to add them as a friend on their profile. Once user A adds user B as a friend, user B would need to accept the request in order for them to be connected. If user B rejects the request, then user A would need to submit another request if they would like to try connecting again.
-
 As a user, I want to see who my friends, so that I can request to watch a movie with them.
     Within the social tab of the app, the user should be able to view who they are friends with on the app. From there, they can send their friends or friend group a request to start a new movie session. If the user would like to send a request to watch a movie with a group, there should be a button for the user to click to request more than 1 friend.  If accepted, they will be able to swipe for movies within that session. If the request is not accepted, then they would need to submit another request if they would like to try connecting again. See the add friends to profile story for more information on the social aspect.
 
