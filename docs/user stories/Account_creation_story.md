@@ -1,7 +1,3 @@
-As a user, I want to be able to delete my account
-    In the user info page, we can add a button for users to delete their account. If a user would like to delete their account, we would ask them to confirm their login information. If everything checks out, we would delete all information that is related to that user including their user profile and their resident relationship.
-
-
 As a user, I want to be able to log in to my account.
     The user should see a login page that prompts them to enter the username/email and a password. When entering their password, the user can choose whether it is visible or not while typing it. After entering the users login information, they should be able to click a submit, or log-in, button. If the user is found, they will be directed to the app's home page. If the user is not found, they will be notified that they entered a wrong username and password.
 
