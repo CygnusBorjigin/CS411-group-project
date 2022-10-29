@@ -1,7 +1,3 @@
-As a user, I want to be able to create an account
-    There should be a page where users can sign up and create an account with email/username, password OR have the option of using other methods like linking their gmail, twitter, etc 
-
-
 As a user, I want to be able to delete my account
     In the user info page, we can add a button for users to delete their account. If a user would like to delete their account, we would ask them to confirm their login information. If everything checks out, we would delete all information that is related to that user including their user profile and their resident relationship.
 
