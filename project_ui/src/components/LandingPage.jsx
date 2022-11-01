@@ -11,7 +11,7 @@ const LandingPage = () => {
                         <li>Ariel Uribe</li>
                         <li>Aleks Sekulovski</li>
                         <li>Brian Li</li>
-                        <li>Zhuoyi Wang</li>
+                        <li>Cygnus Wang</li>
                         <li>Divya Bamalwa</li>
                     </ul>
 

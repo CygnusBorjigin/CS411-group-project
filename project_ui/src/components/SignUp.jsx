@@ -9,7 +9,7 @@ const SignUp = (props) => {
     const backgroundStyle = "h-screen w-screen bg-gray-200 flex justify-center";
     const formStyle = "h-1/2 w-1/2 border-2 rounded-md border-black mt-60 flex flex-col";
     const titleStyle = "text-center text-black mt-8 text-2xl font-aboreto";
-    const lineStyle = "mt-8 border-dotted w-2/3 ml-auto mr-auto";
+    const lineStyle = "mt-8 border-dotted border-1.5 border-black w-2/3 ml-auto mr-auto";
 
     const [userEmail, setUserEmail] = useState("");
     const [userPassword1, setUserPassword1] = useState("");
