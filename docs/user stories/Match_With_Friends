@@ -1,0 +1,7 @@
+As a user, I want to swipe through movies with my friend, so that we can be “matched” on a movie.
+    There is a UI that displays movie titles and a movie poster where users can “swipe” on movies 
+    by clicking the right or left arrow OR by clicking on the left or right side of the screen. 
+    Once the user clicks right/left on a movie, that movie is replaced with a new movie in which 
+    the user repeats the process. Swiping right on the movie will indicate that it is a “liked”  movie 
+    while swiping left will indicate that it is not a liked movie. The database will maintain a record 
+    of these interactions so that when two or more linked users like the same movie, they will be notified of the connection.
