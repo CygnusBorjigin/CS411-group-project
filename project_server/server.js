@@ -14,6 +14,7 @@ app.use(express.json());
 
 // connect to the top level
 app.use('/api/auth', require('./routes/api/auth/gateway.js'));
+app.use('/api/movielist', require("./routes/api/movie/currentMovie.js"));
 
 // initialize and start the server
 const PORT = 8000;
