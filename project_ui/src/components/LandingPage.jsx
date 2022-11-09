@@ -18,7 +18,9 @@ const LandingPage = () => {
                     <Link to={"/signin"} className={"mt-10 border-4 border-gray-400 w-1/6 mx-auto rounded-xl text-[20px] font-raleway hover:bg-gray-400 text-center"}>
                         Enter Project
                     </Link>
-
+                    <Link to={"/dashboard"} className={"mt-10 border-4 border-gray-400 w-1/6 mx-auto rounded-xl text-[20px] font-raleway hover:bg-gray-400 text-center"}>
+                         demo
+                    </Link>
                 </div>
             </div>
         </div>
