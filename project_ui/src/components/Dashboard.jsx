@@ -7,7 +7,7 @@ const Dashboard = () => {
     const fetchMovieList = () => {
         var config = {
             method: 'get',
-            url: 'http://localhost:8000/api/movielist',
+            url: 'http://localhost:3030/api/movielist',
             headers: { }
         };
 
