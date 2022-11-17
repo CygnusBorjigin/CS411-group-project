@@ -12,5 +12,7 @@ gateway.get('/', (req, res) => {
 
 // connect to the sub-routes
 gateway.use('/authenticate', require('./authenticate.js'));
+gateway.use('/signin', require('./signin'));
+gateway.use('/signup', require('./signup'));
 
 module.exports = gateway;
