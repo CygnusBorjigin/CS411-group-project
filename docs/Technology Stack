@@ -1,0 +1,14 @@
+What we’re using:
+Express
+React	
+Potential alternatives:
+Flask, Gonic
+Angular
+
+Reasoning:
+React is the most used/documented resource for building front-end applications. 
+Additionally, React is what we have the most experience with as a group.
+One reason for choosing express would be that it uses javascript and keeps all the code in one language allowing us to avoid data type conversions. 
+Express allows for the easy integration of APIs in web applications. 
+It's also easy to connect to databases and includes middleware modules 
+that can perform additional tasks on request and response and a quicker I/O implies a speedy response to the user requests.
