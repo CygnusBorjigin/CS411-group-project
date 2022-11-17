@@ -1,7 +1,11 @@
 {
   "user1": {
     "id": "12345",
-    "name": "first user",
+    "password": "somepassword",
+    "moviesLiked": [],
+    "friends": []
+  },
+  "someone": {
     "password": "somepassword",
     "moviesLiked": [],
     "friends": []
