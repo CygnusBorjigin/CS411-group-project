@@ -17,8 +17,4 @@ const fetchTweet = async (movieName) => {
     });
 }
 
-const test = async () => {
-    res = await fetchTweet("black");
-    console.log(res);
-}
 module.exports = fetchTweet()
