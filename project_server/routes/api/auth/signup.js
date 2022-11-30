@@ -8,7 +8,7 @@ signup.get('/', (req, res) => {
     res.send('this is for signup');
 });
 
-signup.post('/', async (req, res) => {
+signup.post('/', (req, res) => {
     const {name, password} = req.body;
     let userFile = JSON.parse(readFileSync('./routes/api/auth/userInfo.json', 'utf8'));
     if (name in Object.keys(userFile)){

@@ -54,6 +54,7 @@ const Dashboard = () => {
                 <p className={"px-12"}>{allMovies[currentDisplay].overview}</p>
             </div>
             <button className={"w-1/12 h-2/3 border-2 border-gray-700  rounded-xl my-auto mx-6 font-raleway text-[20px] font-bold hover:bg-gray-600 hover:text-white"} onClick={handlePass}>Pass</button>
+            <div>{allMovies[currentDisplay].tweets}</div>
         </div>
     )
 }
