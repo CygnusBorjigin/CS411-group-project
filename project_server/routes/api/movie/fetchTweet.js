@@ -1,14 +1,12 @@
-var Twit = require('twit');
+const Twit = require('twit');
 const configFile = require("../../../config.json");
 
-const fetchTweet = async (movieName) => {
+export const fetchTweet = async (movieName) => {
     const twitterConfig = configFile.twitterConfig;
 
     const T = new Twit(twitterConfig);
 
-    let res = [];
-
-    res = await T.get('search/tweets', {q: `${movieName}`, count: 10});
+    const res = await T.get('search/tweets', {q: `${movieName}`, count: 50});
     return res.data.statuses.map(each => {
         return {
             id: each.id,
@@ -16,5 +14,3 @@ const fetchTweet = async (movieName) => {
         }
     });
 }
-
-module.exports = fetchTweet()

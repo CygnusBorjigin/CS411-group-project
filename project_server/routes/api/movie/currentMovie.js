@@ -4,38 +4,50 @@ const movies = express.Router();
 const cors = require('cors');
 const axios = require('axios');
 const {response} = require("express");
-const configFile = require("../../../config.json");
+const configFile = require("../../../../../config.json");
+const Twit = require("twit");
 
 movies.use(cors());
 
-movies.get("/", (req, res) => {
+movies.get("/", async (req, res) => {
+    const result = await movieWithTweets();
+    res.send(result);
+})
+
+const fetchTweet = async (movieName) => {
+    const twitterConfig = configFile.twitterConfig;
+
+    const T = new Twit(twitterConfig);
+
+    const res = await T.get('search/tweets', {q: `${movieName}`, count: 50});
+    return res.data.statuses.map(each => {
+        return {
+            id: each.id,
+            text: each.text
+        }
+    });
+}
+
+
+const movieWithTweets = async () => {
     const config = {
         method: 'post',
         url: `https://api.themoviedb.org/3/movie/upcoming?api_key=${configFile.movieApiKey}&language=en-US&page=1`,
-        headers: {
-            'X-RapidAPI-Key': 'c4eb1b0c40msh6357472b3c67f26p1eceddjsn879814040bef',
-            'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
-        }
+        headers: configFile.movieAPIHeader
     };
 
-    axios(config)
-        .then(function (response) {
-            const movieRes = response.data;
-            const cleaned = movieRes.results.map(each => {
-                return {
-                    id: each.id,
-                    backdrop_path: each.backdrop_path,
-                    original_title: each.original_title,
-                    overview: each.overview,
-                    release_date: each.release_date
-                }
-            });
-            res.json(cleaned);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-
-})
+    const movieRes = await axios(config);
+    const result = await Promise.all(movieRes.data.results.map(async (each, index) => {
+        const tweets = await fetchTweet(each.original_title);
+        const eachRes = {
+            id: each.id,
+            original_title: each.original_title,
+            overview: each.overview,
+            tweets: tweets
+        }
+        return eachRes
+    }));
+    return result
+}
 
 module.exports = movies;
