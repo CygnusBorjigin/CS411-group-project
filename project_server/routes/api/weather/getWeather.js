@@ -2,8 +2,14 @@
 const axios = require("axios");
 const express = require("express");
 const weather = express.Router();
+const cors = require("cors");
 
+weather.use(cors());
 
+weather.get("/", async (req, res) => {
+    const result = await getWeather();
+    res.send(result);
+})
 
 const getWeather = async() => {
     const config = {
@@ -23,6 +29,7 @@ const getWeather = async() => {
            })
        }
     });
-
-    console.log(res);
+    return res;
 }
+
+module.exports = weather;
