@@ -12,7 +12,13 @@ signin.post('/', (req, res) => {
     let userFile = JSON.parse(readFileSync('./routes/api/auth/userInfo.json', 'utf8'));
     if (name in Object.keys(userFile) == false){
         res.send("user does not exist");
-        return
+    } else {
+        const storedPassword = userFile.name.password;
+        if (storedPassword === password) {
+            res.send(name);
+        } else {
+            res.send("false")
+        }
     }
 
 
