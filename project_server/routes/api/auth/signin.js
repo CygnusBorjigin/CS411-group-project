@@ -8,20 +8,18 @@ signin.get('/', (req, res) => {
 });
 
 signin.post('/', (req, res) => {
-    const {name, password} = req.body;
+    const userInfo = req.body;
     let userFile = JSON.parse(readFileSync('./routes/api/auth/userInfo.json', 'utf8'));
-    if (name in Object.keys(userFile) == false){
-        res.send("user does not exist");
-    } else {
-        const storedPassword = userFile.name.password;
-        if (storedPassword === password) {
-            res.send(name);
+    if (userInfo.name in userFile){
+        const storedPassword = userFile[userInfo.name].password;
+        if (storedPassword === userInfo.password) {
+            res.send(userInfo.name);
         } else {
             res.send("false")
         }
+    } else {
+        res.send("user does not exist");
     }
-
-
 })
 
 module.exports = signin;
