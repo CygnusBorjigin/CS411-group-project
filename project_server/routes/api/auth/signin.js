@@ -10,7 +10,7 @@ signin.get('/', (req, res) => {
 signin.post('/', (req, res) => {
     const userInfo = req.body;
     let userFile = JSON.parse(readFileSync('./routes/api/auth/userInfo.json', 'utf8'));
-    if (userInfo.name in userFile){
+    if (Object.keys(userFile).includes(userInfo.name)){
         const storedPassword = userFile[userInfo.name].password;
         if (storedPassword === userInfo.password) {
             res.send(userInfo.name);

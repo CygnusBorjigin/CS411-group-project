@@ -11,7 +11,7 @@ signup.get('/', (req, res) => {
 signup.post('/', (req, res) => {
     const {name, password} = req.body;
     let userFile = JSON.parse(readFileSync('./routes/api/auth/userInfo.json', 'utf8'));
-    if (name in Object.keys(userFile)){
+    if (Object.keys(userFile).includes(name)){
         res.send("user already exist");
         return
     }
