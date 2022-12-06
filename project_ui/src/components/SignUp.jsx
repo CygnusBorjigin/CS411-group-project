@@ -99,6 +99,9 @@ const SignUp = (props) => {
 
                 <hr className={lineStyle}/>
                 <Link to={"/signin"}  className={buttonStyle}>Sign In</Link>
+                {errors.length === 0 ? null : errors.map(each => {
+                    return <h1 className={"text-center text-red-700"}>{each}</h1>
+                })}
             </div>
         </div>
     )
