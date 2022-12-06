@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
     const inputStyle = "w-2/3 h-10 border-2 rounded-md border-black mt-8 ml-auto mr-auto bg-transparent text-center text-l text-gray-600 placeholder:text-black placeholder:font-quicksand focus:outline-gray-600";
@@ -9,16 +10,44 @@ const SignIn = () => {
     const titleStyle = "text-center text-black mt-8 text-2xl font-raleway";
     const lineStyle = "mt-8 border-dotted w-2/3 ml-auto mr-auto bg-black border-1.5";
 
-    const [userEmail, setUserEmail] = useState("");
+    const [userName, setUserName] = useState("");
     const [userPassword, setUserPassword] = useState("");
+    const [incorrectPassword, setIncorrectPassword] = useState(false);
 
-    const handelSignIn = () => {
+    const navigate = useNavigate();
+
+    const handelSignIn = async () => {
+        const data = JSON.stringify({
+            "name": userName,
+            "password": userPassword
+        });
+
+        const config = {
+            method: 'post',
+            url: 'http://localhost:3030/api/auth/signin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data : data
+        };
+
+        try {
+            const authRes = await axios(config)
+            if (authRes.data != false) {
+               localStorage.setItem("411Project", authRes.data);
+               navigate('/dashboard');
+            } else {
+                setIncorrectPassword(true);
+            }
+        } catch (error) {
+            console.log(error)
+        }
 
     }
 
 
     const handelChange = (event) => {
-        if (event.target.id === "emailInput") setUserEmail(event.target.value);
+        if (event.target.id === "emailInput") setUserName(event.target.value);
         if (event.target.id === "passwordInput") setUserPassword(event.target.value);
     };
     return(
@@ -28,9 +57,9 @@ const SignIn = () => {
                 <input
                     id={"emailInput"}
                     className={inputStyle}
-                    placeholder={"Please Enter your email"}
+                    placeholder={"Please Enter your user name"}
                     onChange={handelChange}
-                    value={userEmail}
+                    value={userName}
                 ></input>
                 <input
                     id={"passwordInput"}
@@ -49,7 +78,7 @@ const SignIn = () => {
 
                 <hr className={lineStyle} />
                 <Link to={"/register"} className={buttonStyle}>Sign Up</Link>
-
+                {incorrectPassword ? <h1 className={"text-center font-xl text-red-700 mt-4"}>Wrong Password</h1> : null}
             </div>
         </div>
     )

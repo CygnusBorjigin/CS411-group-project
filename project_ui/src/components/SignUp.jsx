@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const SignUp = (props) => {
     const inputStyle = "w-2/3 h-10 border-2 rounded-md border-black mt-8 ml-auto mr-auto bg-transparent text-center text-l text-gray-600 placeholder:text-black placeholder:font-quicksand focus:outline-gray-600";
@@ -11,7 +12,7 @@ const SignUp = (props) => {
     const titleStyle = "text-center text-black mt-8 text-2xl font-aboreto";
     const lineStyle = "mt-8 border-dotted border-1.5 border-black w-2/3 ml-auto mr-auto";
 
-    const [userEmail, setUserEmail] = useState("");
+    const [userName, setUserName] = useState("");
     const [userPassword1, setUserPassword1] = useState("");
     const [userPassword2, setUserPassword2] = useState("");
     const [passwordMatch, setPasswordMatch] = useState(true);
@@ -20,7 +21,7 @@ const SignUp = (props) => {
     const navigate = useNavigate();
 
     const handelChange = (event) => {
-        if (event.target.id === "emailInput") setUserEmail(event.target.value);
+        if (event.target.id === "emailInput") setUserName(event.target.value);
         if (event.target.id === "passwordInput1") setUserPassword1(event.target.value);
         if (event.target.id === "passwordInput2") setUserPassword2(event.target.value);
     };
@@ -32,8 +33,33 @@ const SignUp = (props) => {
         setPasswordMatch(checkPasswordMatch);
     }, [userPassword2]);
 
-    const handelSignUp = () => {
+    const handelSignUp = async () => {
+        const data = JSON.stringify({
+            "name": userName,
+            "password": userPassword1
+        });
 
+        const config = {
+            method: 'post',
+            url: 'http://localhost:3030/api/auth/signup',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data : data
+        };
+
+        try {
+            const authRes = await axios(config);
+            if (authRes.data == "user registered") {
+                navigate('/dashboard');
+            } else {
+                setErrors(prev => {
+                    return [...prev, authRes.data]
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 
@@ -46,7 +72,7 @@ const SignUp = (props) => {
                     className={inputStyle}
                     placeholder={"Please Enter your email"}
                     onChange={handelChange}
-                    value={userEmail}
+                    value={userName}
                 ></input>
                 <input
                     id={"passwordInput1"}

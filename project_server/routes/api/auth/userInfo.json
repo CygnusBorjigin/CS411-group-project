@@ -14,5 +14,15 @@
     "password": "somepassword",
     "moviesLiked": [],
     "friends": []
+  },
+  "somsone2": {
+    "password": "12345678",
+    "moviesLiked": [],
+    "friends": []
+  },
+  "user8": {
+    "password": "someone8",
+    "moviesLiked": [],
+    "friends": []
   }
 }
