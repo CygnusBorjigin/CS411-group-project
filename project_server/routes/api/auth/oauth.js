@@ -3,8 +3,6 @@ const cors = require("cors");
 const fetch = (...args) => import("node-fetch").then(({default: fetch}) => fetch(...args));
 const bodyParser = require('body-parser');
 const configFile = require("../../../../../config.json");
-const { json } = require("express");
-
 const oauth = express();
 oauth.use(cors())
 oauth.use(bodyParser.json())
@@ -39,6 +37,4 @@ oauth.get('/getUserData', async (req, res) => {
     })
 })
 
-oauth.listen(3002, function () {
-    console.log("This server is running")
-})
+module.exports = oauth;
