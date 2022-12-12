@@ -5,23 +5,8 @@
     "moviesLiked": [],
     "friends": []
   },
-  "someone": {
-    "password": "somepassword",
-    "moviesLiked": [],
-    "friends": []
-  },
-  "someone1": {
-    "password": "somepassword",
-    "moviesLiked": [],
-    "friends": []
-  },
-  "somsone2": {
-    "password": "12345678",
-    "moviesLiked": [],
-    "friends": []
-  },
-  "user8": {
-    "password": "someone8",
+  "user4": {
+    "password": "password3",
     "moviesLiked": [],
     "friends": []
   }

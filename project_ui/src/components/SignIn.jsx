@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 
-const SignIn = (props) => {
+const SignIn = () => {
     const inputStyle = "w-2/3 h-10 border-2 rounded-md border-black mt-8 ml-auto mr-auto bg-transparent text-center text-l text-gray-600 placeholder:text-black placeholder:font-quicksand focus:outline-gray-600";
     const buttonStyle = "text-center border-2 rounded-md border-gray-700 w-1/6 ml-auto mr-auto mt-8 text-gray-700 py-2 hover:bg-amber-50 hover:text-gray-600 font-raleway";
     const backgroundStyle = "h-screen w-screen bg-gray-200 flex justify-center";
@@ -58,8 +58,10 @@ const SignIn = (props) => {
         };
 
         try {
-            const authRes = await axios(config)
-            if (authRes.data != false) {
+            const authRes = await axios(config);
+            console.log(authRes.data);
+            console.log(typeof authRes.data);
+            if (authRes.data !== "user does not exis" || !authRes.data) {
                 localStorage.setItem("411Project", authRes.data);
                 navigate('/dashboard');
             } else {
