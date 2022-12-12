@@ -16,21 +16,22 @@ const SignIn = () => {
         console.log(codeParam);
 
         if(codeParam && (localStorage.getItem("accessToken") === null)){
-            async function getAccessToken(){
-                await fetch ("http://localhost:3030/getAccessToken" + codeParam, {
+            const getAccessToken = async () => {
+                await fetch("http://localhost:3000/getAccessToken?code=" + codeParam, {
                     method: "GET"
                 }).then((response) => {
                     return response.json();
                 }).then((data) => {
                     if(data.access_token){
+
                         localStorage.setItem("accessToken", data.access_token);
-                        setRerender(!rerender);
                     }
                 })
             }
             getAccessToken();
         }
     }, []);
+
 
     async function getUserData(){
         await fetch("http:localhost:3030/getUserData", {
@@ -124,9 +125,10 @@ const SignIn = () => {
                 >
                     Sign In
                 </button>
+                
                 {localStorage.getItem("accessToken") ?
-                    <>
-                        <h1>We have the access token</h1>
+                    <>{/**
+                     * <h1>We have the access token</h1>
                         <button onClick={() => {localStorage.removeItem("accessToken"); setRerender(!rerender); }}>
                             log out
                         </button>
@@ -137,10 +139,11 @@ const SignIn = () => {
                             </>:
                             <>
                             </>
+                     */}
+                        
                     </>
 
                     :
-
                     <>
                         <button className={buttonStyle}onClick={loginWithGH}>
                         GitHub Login
