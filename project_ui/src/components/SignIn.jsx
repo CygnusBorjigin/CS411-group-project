@@ -1,8 +1,57 @@
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
+const CLIENT_ID = "efce7bffbbdda4faaedd";
+
+
+
 
 const SignIn = () => {
+    const [rerender, setRerender] = useState(false);
+    const [userData, setUserData] = useState({});
+    useEffect(() => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const codeParam = urlParams.get("code");
+        console.log(codeParam);
+
+        if(codeParam && (localStorage.getItem("accessToken") === null)){
+            async function getAccessToken(){
+                await fetch ("http://localhost:3030/getAccessToken" + codeParam, {
+                    method: "GET"
+                }).then((response) => {
+                    return response.json();
+                }).then((data) => {
+                    if(data.access_token){
+                        localStorage.setItem("accessToken", data.access_token);
+                        setRerender(!rerender);
+                    }
+                })
+            }
+            getAccessToken();
+        }
+    }, []);
+
+    async function getUserData(){
+        await fetch("http:localhost:3030/getUserData", {
+             method: "GET",
+             headers: {
+                "Authorization" : "Bearer" + localStorage.getItem("accessToken")
+             }
+        }).then((response) => {
+            return response.json();
+        }).then((data) =>{
+            console.log(data);
+            setUserData(data);
+        })
+    }
+    
+    function loginWithGH(){
+        window.location.assign("https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID);
+    }
+
+
+
     const inputStyle = "w-2/3 h-10 border-2 rounded-md border-black mt-8 ml-auto mr-auto bg-transparent text-center text-l text-gray-600 placeholder:text-black placeholder:font-quicksand focus:outline-gray-600";
     const buttonStyle = "text-center border-2 rounded-md border-gray-700 w-1/6 ml-auto mr-auto mt-8 text-gray-700 py-2 hover:bg-amber-50 hover:text-gray-600 font-raleway";
     const backgroundStyle = "h-screen w-screen bg-gray-200 flex justify-center";
@@ -75,6 +124,31 @@ const SignIn = () => {
                 >
                     Sign In
                 </button>
+                {localStorage.getItem("accessToken") ?
+                    <>
+                        <h1>We have the access token</h1>
+                        <button onClick={() => {localStorage.removeItem("accessToken"); setRerender(!rerender); }}>
+                            log out
+                        </button>
+                        <button onClick={getUserData}>get data</button>
+                        {Object.keys(userData).length !== 0}?
+                            <>
+                                <h4>hello {userData.login}</h4>
+                            </>:
+                            <>
+                            </>
+                    </>
+
+                    :
+
+                    <>
+                        <button className={buttonStyle}onClick={loginWithGH}>
+                        GitHub Login
+                        </button>
+                    </>
+            
+                }
+                
 
                 <hr className={lineStyle} />
                 <Link to={"/register"} className={buttonStyle}>Sign Up</Link>
