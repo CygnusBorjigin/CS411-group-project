@@ -1,0 +1,6 @@
+
+As a user, I want easy access to a calendar, so that I can choose a date with my friend to watch a movie together. 
+Following the account creation and sign in user stories, once logged in, a user will be able to instantly see the dates
+for the week starting with the current date and ending 6 days later. These dates will be shown at the top of their screen along with
+the weather information for each corresponding date(low/high temperature and sunny,raining,snowing, etc).
+
