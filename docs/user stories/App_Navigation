@@ -1,1 +1,5 @@
-As a user, I want to be able to navigate through multiple aspects of the app with easy access. I would like a sleek view with all important features on the main page to gather necessary information such as the weather, movie description and relevent tweets to decide if I want to watch the movie and when.
+As a user, I want to be able to navigate through multiple aspects of the app with easy access. 
+I would like a sleek view with all important features on the main page to gather necessary information such as the weather, 
+movie description and relevent tweets to decide if I want to watch the movie and when. Having gone through the "account creation" user story
+and the "log in" user story, as a user I will be able to access the dashboard containing all of previously mentioned information in different
+locations on my screen. Additionally I will be able to use 'like' and 'pass' buttons to denote whether or not I would watch a certain movie.
