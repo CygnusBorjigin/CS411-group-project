@@ -3,5 +3,6 @@ As a user, I want to be able to sign in to my account. Once having completed the
     After entering the users login information, they should be able to click a submit, or log-in, button. 
     If the user is found, they will be directed to the app's home page. If the user is not found, 
     they will be allowed to keep retrying until they have a valid username and password. 
-    Additionally, as a user, I will have the option to log into the app with a Github account by clicking the 'login with GitHub' button.
+    Additionally, as a user, I will have the option to log into the app with a Github account by clicking the 'login with GitHub' button,
+    forcing the user to insert their github login information to proceed into the dashboard.
     
