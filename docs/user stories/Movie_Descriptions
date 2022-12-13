@@ -1,4 +1,3 @@
 As a user, I want to see more information about a specific movie that I am swiping through.
-    As a user is swiping through movies to watch, one should be able to swipe up on a movie 
-    to find out important information about the movie such as ratings, genre, length, and a 
-    synopsis. 
+    As a user is 'liking' or 'passing' movies to watch, they will receive an updated movie 
+    description/synopsis with each new movie title that appears on their screen.
