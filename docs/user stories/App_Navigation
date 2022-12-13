@@ -1,7 +1,1 @@
-As a user, I want to be able to navigate through different aspects of the app, the matching page, profile page, social page, 
-calendar page, list of matches, etc
-    There should be a sidebar or header where users can locate and click to see 
-    the different features and sections of the app. Each “section” of the app will 
-    have its’ own button with a discernible symbol such that the user can rationally understand 
-    what they are clicking on. Additionally, there should be text underneath each symbol corresponding 
-    to a section that should aid the user in selecting a section. 
+As a user, I want to be able to navigate through multiple aspects of the app with easy access. I would like a sleek view with all important features on the main page to gather necessary information such as the weather, movie description and relevent tweets to decide if I want to watch the movie and when.
