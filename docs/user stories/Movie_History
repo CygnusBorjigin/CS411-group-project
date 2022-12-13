@@ -1,4 +1,0 @@
-As a user, I want to be able to see what movies I have swiped on.
-    Users should have a page where they can see all the movies they have swiped on. 
-    Have the option to sort by date swiped, genre, etc. If a user changes their mind 
-    on a movie, they should be able to change their current status to the opposite(liked to disliked and vice versa).
