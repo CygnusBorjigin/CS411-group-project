@@ -1,2 +1,3 @@
-As a user, I want to be able to create an account.
-There should be a page where users can sign up and create an account with email/username, password OR have the option of using other methods like linking their gmail, twitter, etc
+As a user, I want to be able to create an account. Upon entering the app, as a user I will be presented with a 'Sign Up' button 
+that will send me to a page where I can enter my email or username and password to create an account. 
+From that page I can then return and attempt the 'sign-in' user story.
