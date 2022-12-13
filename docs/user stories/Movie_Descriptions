@@ -1,5 +1,4 @@
 As a user, I want to see more information about a specific movie that I am swiping through.
     As a user is swiping through movies to watch, one should be able to swipe up on a movie 
     to find out important information about the movie such as ratings, genre, length, and a 
-    synopsis. The user should also be able to see what streaming services the movie is available 
-    on in order to know if they have access to that particular streaming service.
+    synopsis. 
